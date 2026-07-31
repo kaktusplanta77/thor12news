@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="icon" href="/images/thor-icon.png">
+  <link rel="manifest" href="/manifest.json">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>thor12news — dagens nyheter</title>
   <style>
@@ -173,7 +174,13 @@
   </a>
 
 </div>
-<footer>thor12news — AI-genererade nyheter | <span id="datum"></span></footer>
+<footer>
+  <div style="margin-top:14px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;">
+    <a href="/thor12news/thor12news.apk" style="display:inline-block;background:#1a6bff;color:#fff;padding:8px 18px;border-radius:10px;text-decoration:none;font-size:13px;font-weight:600;">📱 Ladda ner för Android</a>
+    <a href="#" onclick="alert('Öppna thor12news i Safari, tryck på Dela-knappen (📤) och välj \'Lägg till på hemskärmen\' — då funkar det som en app!')" style="display:inline-block;background:#333;color:#fff;padding:8px 18px;border-radius:10px;text-decoration:none;font-size:13px;font-weight:600;">🍏 Ladda ner för iOS</a>
+  </div>
+  <p style="margin-top:10px;">thor12news — AI-genererade nyheter | <span id="datum"></span></p>
+</footer>
 <script>document.getElementById('datum').textContent=new Date().toLocaleDateString('sv-SE',{year:'numeric',month:'long',day:'numeric',weekday:'long'});</script>
 
 <div id="disclaimer-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:99999;overflow:auto;">
