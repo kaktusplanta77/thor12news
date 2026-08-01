@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <link rel="icon" href="/images/thor-icon.png">
   <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="thor12news">
+  <meta name="theme-color" content="#1a6bff">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>thor12news — dagens nyheter</title>
   <style>
@@ -174,11 +179,26 @@
 <footer>
   <div style="margin-top:14px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;">
     <a href="/thor12news/thor12news.apk" style="display:inline-block;background:#1a6bff;color:#fff;padding:8px 18px;border-radius:10px;text-decoration:none;font-size:13px;font-weight:600;">📱 Ladda ner för Android</a>
-    <a href="#" onclick="alert('Öppna thor12news i Safari, tryck på Dela-knappen (📤) och välj \'Lägg till på hemskärmen\' — då funkar det som en app!')" style="display:inline-block;background:#333;color:#fff;padding:8px 18px;border-radius:10px;text-decoration:none;font-size:13px;font-weight:600;">🍏 Ladda ner för iOS</a>
+    <a href="#" onclick="document.getElementById('ios-modal').style.display='flex';return false;" style="display:inline-block;background:#333;color:#fff;padding:8px 18px;border-radius:10px;text-decoration:none;font-size:13px;font-weight:600;">🍏 Ladda ner för iOS</a>
   </div>
   <p style="margin-top:10px;">thor12news — AI-genererade nyheter | <span id="datum"></span></p>
 </footer>
 <script>document.getElementById('datum').textContent=new Date().toLocaleDateString('sv-SE',{year:'numeric',month:'long',day:'numeric',weekday:'long'});</script>
+
+<!-- iOS-installationsguide (PWA) -->
+<div id="ios-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:99998;align-items:center;justify-content:center;">
+  <div style="max-width:420px;width:90%;background:#fff;border-radius:16px;padding:24px 26px;box-shadow:0 8px 40px rgba(0,0,0,0.3);text-align:left;">
+    <h3 style="font-size:18px;margin-bottom:6px;">🍏 Installera thor12news på iPhone/iPad</h3>
+    <p style="font-size:13px;color:#888;margin-bottom:10px;">Det blir en app-ikon på hemskärmen som öppnar thor12news i helskärm — precis som en vanlig app.</p>
+    <ol style="font-size:14.5px;line-height:1.8;color:#444;padding-left:20px;margin:8px 0;">
+      <li>Öppna den här sidan i <strong>Safari</strong></li>
+      <li>Tryck på <strong>Dela</strong>-knappen (📤) längst ner</li>
+      <li>Välj <strong>"Lägg till på hemskärmen"</strong></li>
+      <li>Tryck <strong>"Lägg till"</strong> uppe till höger — klart! 🎉</li>
+    </ol>
+    <button onclick="document.getElementById('ios-modal').style.display='none'" style="background:#1a6bff;color:#fff;border:none;padding:11px 22px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;margin-top:12px;width:100%;">Stäng</button>
+  </div>
+</div>
 
 <!-- ⚠️ DISCLAIMER — MÅSTE FINNAS -->
 <div id="disclaimer-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:99999;overflow:auto;">
